@@ -12,11 +12,19 @@ It extends the original font to support additional languages.
   - Cyrillic (Ukrainian: А-Я, Ґ, Є, І, Ї; Belarusian: Ў, Ё, Ы, Э, І).
   - Latin Extended (Polish: Ą, Ć, Ę, Ł, Ń, Ó, Ś, Ź, Ż).
 
-## Example
+## Examples
 
-<p align="center">
-  <img src="Example.png" alt="Screenshot" width="720">
-</p>
+### English
+<img src="examples/example_eng.png" alt="English Example" width="720">
+
+### Ukrainian
+<img src="examples/example_ukr.png" alt="Ukrainian Example" width="720">
+
+### Belarusian
+<img src="examples/example_bel.png" alt="Belarusian Example" width="720">
+
+### Polish
+<img src="examples/example_pol.png" alt="Polish Example" width="720">
 
 Note: Other Cyrillic alphabets (Russian, Serbian, etc.) are **not** included.
 
