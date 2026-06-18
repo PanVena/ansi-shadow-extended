@@ -1,12 +1,9 @@
-"""Копіює ansi_shadow_ukr.flf у теку шрифтів встановленого pyfiglet,
-щоб шрифт був доступний як звичайний (наприклад: pyfiglet -f ansi_shadow_ukr "Привіт").
+"""Copies ansi_shadow_extended.flf into the installed pyfiglet fonts directory,
+so the font becomes available like any other (e.g. `pyfiglet -f ansi_shadow_extended "Hello"`).
 
-Використання:
-    python install.py            # встановити
-    python install.py --uninstall # видалити з pyfiglet
-
-Copies ansi_shadow_ukr.flf into the installed pyfiglet fonts directory so
-the font becomes available like any other (e.g. `pyfiglet -f ansi_shadow_ukr "Hello"`).
+Usage:
+    python install.py            # install
+    python install.py --uninstall # remove from pyfiglet
 """
 
 from __future__ import annotations
@@ -17,14 +14,14 @@ import shutil
 import sys
 
 
-FONT_FILENAME = "ansi_shadow_ukr.flf"
+FONT_FILENAME = "ansi_shadow_extended.flf"
 
 
 def _pyfiglet_fonts_dir() -> str:
     try:
         import pyfiglet  # noqa: F401
     except ImportError:
-        sys.exit("pyfiglet не встановлено. Спершу: pip install pyfiglet")
+        sys.exit("pyfiglet is not installed. First run: pip install pyfiglet")
 
     try:
         from importlib.resources import files
@@ -37,25 +34,25 @@ def _pyfiglet_fonts_dir() -> str:
 def install() -> None:
     src = os.path.join(os.path.dirname(os.path.abspath(__file__)), FONT_FILENAME)
     if not os.path.isfile(src):
-        sys.exit(f"Не знайдено шрифт: {src}")
+        sys.exit(f"Font not found: {src}")
     dst_dir = _pyfiglet_fonts_dir()
     dst = os.path.join(dst_dir, FONT_FILENAME)
     shutil.copy2(src, dst)
-    print(f"Встановлено: {dst}")
-    print('Перевір: pyfiglet -f ansi_shadow_ukr "Привіт"')
+    print(f"Installed: {dst}")
+    print('Test: pyfiglet -f ansi_shadow_extended "Hello"')
 
 
 def uninstall() -> None:
     dst = os.path.join(_pyfiglet_fonts_dir(), FONT_FILENAME)
     if os.path.isfile(dst):
         os.remove(dst)
-        print(f"Видалено: {dst}")
+        print(f"Removed: {dst}")
     else:
-        print(f"Файла нема: {dst}")
+        print(f"File not found: {dst}")
 
 
 def main() -> None:
-    p = argparse.ArgumentParser(description="Install/uninstall ansi_shadow_ukr font for pyfiglet.")
+    p = argparse.ArgumentParser(description="Install/uninstall ansi_shadow_extended font for pyfiglet.")
     p.add_argument("--uninstall", action="store_true", help="Remove the font from pyfiglet.")
     args = p.parse_args()
     (uninstall if args.uninstall else install)()

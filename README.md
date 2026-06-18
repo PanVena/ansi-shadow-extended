@@ -1,85 +1,70 @@
-# ANSI Shadow Ukrainian (`ansi_shadow_ukr`)
+# ANSI Shadow Extended (`ansi_shadow_extended`)
 
-Український варіант відомого FIGlet-шрифта **ANSI Shadow**, зроблений на основі
-латинського оригіналу. Висота 9 рядків (на 2 більше за оригінальний 7-рядковий
-ANSI Shadow), щоб лишити місце під діакритику українських літер (`Й`, `Ї`).
-Покриває український абетковий набір — інших кириличних літер (російські,
-сербські, тощо) у шрифті немає. Призначений для використання разом із
-[pyfiglet](https://github.com/pwaller/pyfiglet).
+An extended variant of the well-known FIGlet font **ANSI Shadow**, based on the Latin original. 
+Height is 9 lines (vs. 7 in the original ANSI Shadow) to leave room for diacritics. 
+It extends the original font to support additional languages. 
 
-> Ukrainian variant of the well-known **ANSI Shadow** FIGlet font, based on the
-> Latin original. Height is 9 lines (vs. 7 in the original) to leave room for
-> Ukrainian diacritics (`Й`, `Ї`). Covers the Ukrainian alphabet only — no
-> other Cyrillic letters (Russian, Serbian, etc.) are included. For use with
-> [pyfiglet](https://github.com/pwaller/pyfiglet).
+## Features
 
-## Приклад / Example
+- **9 lines height** — expanded from original 7 lines.
+- **Language support**:
+  - Basic Latin (from the original ANSI Shadow).
+  - Cyrillic (Ukrainian: А-Я, Ґ, Є, І, Ї; Belarusian: Ў, Ё, Ы, Э, І).
+  - Latin Extended (Polish: Ą, Ć, Ę, Ł, Ń, Ó, Ś, Ź, Ż).
+
+## Example
 
 <p align="center">
   <img src="Example.png" alt="Screenshot" width="720">
 </p>
 
+Note: Other Cyrillic alphabets (Russian, Serbian, etc.) are **not** included.
 
-## Файли / Files
+## Files
 
-- `ansi_shadow_ukr.flf` — сам шрифт у форматі FIGlet.
-- `install.py` — копіює шрифт у теку `pyfiglet/fonts/` встановленого pyfiglet.
-- `demo.py` — рендерить рядок цим шрифтом без постійної інсталяції.
+- `ansi_shadow_extended.flf` — the font file in FIGlet format.
+- `install.py` — copies the font into the installed `pyfiglet/fonts/` directory.
+- `demo.py` — renders a string with this font without persistent installation.
 
-## Встановлення / Installation
+## Installation
 
 ```bash
 pip install pyfiglet
 python install.py
 ```
 
-Перевір:
+Test:
 
 ```bash
-pyfiglet -f ansi_shadow_ukr "Привіт"
+pyfiglet -f ansi_shadow_extended "Hello"
 ```
 
-Видалити з pyfiglet:
+Remove from pyfiglet:
 
 ```bash
 python install.py --uninstall
 ```
 
-## Використання у власному коді / Use in your own code
+## Use in your own code
 
 ```python
 import pyfiglet
 
-# Варіант A: одноразово прокинути .flf у pyfiglet (ідемпотентно;
-# фактично інсталює шрифт, але не вимагає попередньо запускати install.py)
-pyfiglet.FigletFont.installFonts("ansi_shadow_ukr.flf")
-print(pyfiglet.Figlet(font="ansi_shadow_ukr").renderText("Привіт"))
+# Option A: load .flf temporarily (idempotent; installs the font but does not require running install.py)
+pyfiglet.FigletFont.installFonts("ansi_shadow_extended.flf")
+print(pyfiglet.Figlet(font="ansi_shadow_extended").renderText("Hello"))
 
-# Варіант B: після `python install.py` — як зі звичайним вбудованим шрифтом
-print(pyfiglet.figlet_format("Привіт", font="ansi_shadow_ukr"))
+# Option B: after `python install.py` — use as a standard built-in font
+print(pyfiglet.figlet_format("Hello", font="ansi_shadow_extended"))
 ```
 
-## Покриття / Coverage
+## License
 
-Латиниця (як в оригіналі ANSI Shadow), український алфавіт (`А-Я`, `Ґ`, `Є`,
-`І`, `Ї` та їхні строкові форми), цифри й базова пунктуація. Російські /
-сербські / болгарські літери (`Ё`, `Ы`, `Ъ`, `Э`, `Ђ`, `Ј` тощо) **не
-включені**.
+This extended variant is distributed under the **MIT License** (see [LICENSE](LICENSE)).
+The underlying ANSI Shadow glyph design comes from the community FIGlet/TheDraw font family; the original author is undocumented (`Font Author: ?` in the source `.flf`).
 
-## Ліцензія / License
+## Author of the extended adaptation
 
-Цей український варіант поширюється за ліцензією **MIT** (див. [LICENSE](LICENSE)).
-Базовий малюнок гліфів ANSI Shadow походить зі спільнотного FIGlet/TheDraw
-сімейства, де автор оригіналу не задокументований
-(`Font Author: ?` у вихідному `.flf`).
+Pan Vena (Lazy AIs), 2026.
 
-> This Ukrainian variant is distributed under the **MIT License** (see
-> [LICENSE](LICENSE)). The underlying ANSI Shadow glyph design comes from the
-> community FIGlet/TheDraw font family; the original author is undocumented
-> (`Font Author: ?` in the source `.flf`).
-
-## Автор української адаптації / Ukrainian adaptation author
-
-Pan Vena (Ліниві ШІ / Lazy AIs), 2026.
-
-Використовується у грі *Dungeon Revizor: The Game*.
+Used in the game *Dungeon Revizor: The Game*.

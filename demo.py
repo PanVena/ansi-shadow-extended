@@ -1,12 +1,12 @@
-"""Швидке демо шрифта ansi_shadow_ukr.
+"""Quick demo of the ansi_shadow_extended font.
 
-Викликай:
-    python demo.py             # стандартне слово
-    python demo.py "Привіт!"   # власний текст
+Usage:
+    python demo.py             # standard word
+    python demo.py "Hello!"    # custom text
 
-Викликає pyfiglet.FigletFont.installFonts() — це копіює .flf у теку
-pyfiglet (тож фактично інсталює шрифт; окремий запуск install.py не
-потрібен). Виклик ідемпотентний.
+Calls pyfiglet.FigletFont.installFonts() — this copies the .flf into the
+pyfiglet directory (so it actually installs the font; a separate install.py run
+is not needed). The call is idempotent.
 """
 
 from __future__ import annotations
@@ -17,16 +17,16 @@ import sys
 import pyfiglet
 
 
-FONT_FILENAME = "ansi_shadow_ukr.flf"
+FONT_FILENAME = "ansi_shadow_extended.flf"
 
 
 def main() -> None:
-    text = sys.argv[1] if len(sys.argv) > 1 else "Привіт, світе!"
+    text = sys.argv[1] if len(sys.argv) > 1 else "Hello, World!"
     here = os.path.dirname(os.path.abspath(__file__))
     flf_path = os.path.join(here, FONT_FILENAME)
 
     pyfiglet.FigletFont.installFonts(flf_path)
-    fig = pyfiglet.Figlet(font="ansi_shadow_ukr", width=200)
+    fig = pyfiglet.Figlet(font="ansi_shadow_extended", width=200)
     print(fig.renderText(text))
 
 
