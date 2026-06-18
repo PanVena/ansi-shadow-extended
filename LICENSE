@@ -24,12 +24,19 @@ SOFTWARE.
 
 Note on the underlying glyph design:
 
-This font is a Ukrainian-alphabet adaptation derived from the FIGlet font
+The "ANSI Shadow" font traces to an unknown DOS-era author; it was collected
+at roysac.com (as SHADOW.TDF, no authorship attribution on that page) and
+later converted to FIGlet format via patorjk.com/figfont-editor. It is
+distributed by pyfiglet under claimed redistribution rights. Roy/SAC's
+Free Art License (applied to his own works in 2008) does not extend to
+this font, as SHADOW.TDF is not his authorship.
+
+This font is an extended-alphabet adaptation derived from the FIGlet font
 "ANSI Shadow", which is distributed as part of the pyfiglet font collection.
 The original `.flf` lists `Font Author: ?` and points to the TheDraw / RoySAC
 community archive, indicating that the original author is undocumented and
-the glyph design has long been treated as a community asset. The Ukrainian
-glyphs added in this work are original to Pan Vena.
+the glyph design has long been treated as a community asset. The Cyrillic and
+Latin Extended glyphs added in this work are original to Pan Vena.
 
 Pyfiglet itself (used to render the font) is MIT-licensed:
   Copyright (c) 2007-2018 Christopher Jones, Stefano Rivera, Peter Waller,
