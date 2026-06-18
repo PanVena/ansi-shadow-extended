@@ -67,4 +67,8 @@ The underlying ANSI Shadow glyph design comes from the community FIGlet/TheDraw 
 
 Pan Vena (Lazy AIs), 2026.
 
-Used in the game *Dungeon Revizor: The Game*.
+---
+
+## 🎮 Check out Dungeon Revizor: The Game!
+
+This extended adaptation was originally created to be used in **Dungeon Revizor: The Game**. If you enjoy our open-source tools and assets, please consider supporting our team by adding the game to your Steam Wishlist! Your support helps us create more awesome stuff!
