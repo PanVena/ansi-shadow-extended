@@ -4,6 +4,9 @@ An extended variant of the well-known FIGlet font **ANSI Shadow**, based on the 
 Height is 9 lines (vs. 7 in the original ANSI Shadow) to leave room for diacritics. 
 It extends the original font to support additional languages. 
 
+## AI WAS USED FOR AUTOMATIZATION
+I WAS TOO LAZY TO MANUALLY ADD BRAZILIAN TO THE FILE, BECAUSE I DON`T EVEN KNEW HOW IT LOOKED BEFORE IT GENERATED PLACE WHERE TO DRAW FOR ME. 
+
 ## Features
 
 - **9 lines height** — expanded from original 7 lines.
