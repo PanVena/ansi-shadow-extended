@@ -11,6 +11,7 @@ It extends the original font to support additional languages.
   - Basic Latin (from the original ANSI Shadow).
   - Cyrillic (Ukrainian: А-Я, Ґ, Є, І, Ї; Belarusian: Ў, Ё, Ы, Э, І).
   - Latin Extended (Polish: Ą, Ć, Ę, Ł, Ń, Ó, Ś, Ź, Ż).
+  - Latin Extended (Brazilian Portuguese: Á, À, Â, Ã, Ç, É, Ê, Í, Ó, Ô, Õ, Ú).
 
 ## Examples
 
